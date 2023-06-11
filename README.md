@@ -13,7 +13,7 @@ Stack:
 
 ### Configuring XML key extraction and transformation
 
-`index.js#EXPORT_CONFIG` defines a transformation configuration for keys in an XML dataset. The type is: `{[xmlKeyName: string]: (data: any) => any}`.
+`src/index.js#EXPORT_CONFIG` defines a transformation configuration for keys in an XML dataset. The type is: `{[xmlKeyName: string]: (data: any) => any}`.
 
 ```
 const EXPORT_CONFIG = {
@@ -33,7 +33,7 @@ const EXPORT_CONFIG = {
 
 ### Database access during test, dev, and prod
 
-`database.js` defines `DB_Prod` and `DB_Debug` classes that share the same interface `IDatabase`.
+`src/database.js` defines `DB_Prod` and `DB_Debug` classes that share the same interface `IDatabase`.
 `DB_Prod` accesses a local REDIS database. `DB_Debug` access an in-memory database.
 
 Switching between dev & prod DB environments is handled automatically by setting the `NODE_ENV` environment variable. This allows the project to be quickly deployed in test, dev, or prod environments.
@@ -41,4 +41,4 @@ Switching between dev & prod DB environments is handled automatically by setting
 ### Unit testable functions
 
 Functions in this project can be easily unit tested because most complex dependencies are given as arguments.
-Example: To test the `index.jsexportToRedis` function a developer can pass an object matches the IDatabase interface instead of mocking the DB module using `jest.mock`.
+Example: To test the `src/index.jsexportToRedis` function a developer can pass an object matches the IDatabase interface instead of mocking the DB module using `jest.mock`.
