@@ -41,4 +41,4 @@ Switching between dev & prod DB environments is handled automatically by setting
 ### Unit testable functions
 
 Functions in this project can be easily unit tested because most complex dependencies are given as arguments.
-Example: To test the `src/index.jsexportToRedis` function a developer can pass an object matches the IDatabase interface instead of mocking the DB module using `jest.mock`.
+Example: To test the `src/index.js#exportToRedis` function a developer can pass an object matches the IDatabase interface instead of mocking the DB module using `jest.mock`.
