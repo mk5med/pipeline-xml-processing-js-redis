@@ -1,0 +1,11 @@
+services:
+  database:
+    image: redis
+    ports:
+      - "6379:6379"
+  node:
+    build: .
+    # volumes:
+    #   - .:/code
+    links:
+      - database
